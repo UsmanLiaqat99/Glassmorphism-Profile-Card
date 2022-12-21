@@ -1,0 +1,140 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #111;
+}
+
+.card {
+    position: relative;
+    width: 360px;
+    height: 420px;
+    font-family: 'Open Sans';
+}
+
+.card .card-inner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    border-radius: 8px;
+    backdrop-filter: blur(12px);
+    background: rgba(255, 255, 255, .05);
+    box-shadow: 0 0 20px rgba(0, 0, 0, .2);
+}
+
+.card .circle {
+    position: absolute;
+    border-radius: 50%;
+    pointer-events: none;
+    animation: 2s ease-in infinite alternate;
+}
+
+.card .circle:nth-child(1) {
+    width: 120px;
+    height: 120px;
+    top: -50px;
+    left: -50px;
+    background: linear-gradient(
+        #e524c3, #8626b2
+    );
+    animation-name: move-up;
+}
+
+.card .circle:nth-child(2) {
+    width: 180px;
+    height: 180px;
+    bottom: -80px;
+    right: -86px;
+    background: linear-gradient(
+        #d64612, #e48307
+    );
+    animation-name: move-down;
+}
+
+@keyframes move-up {
+    to {
+        transform: translateY(-10px);
+    }
+}
+
+@keyframes move-down {
+    to {
+        transform: translateY(10px);
+    }
+}
+
+.card .profile img {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    border: 12px solid rgba(255, 255, 255, .05);
+}
+
+.card .profile h2 {
+    color: #f9f9f9;
+    font-size: 26px;
+    margin-top: 8px;
+}
+
+.card .profile p {
+    color: #e0e0e0;
+    font-size: 18px;
+}
+
+.card .profile {
+    transform: translateY(20px);
+    transition: .4s ease-out;
+}
+
+.card:hover .profile {
+    transform: translateY(0);
+}
+
+.card .social-icons {
+    margin-top: 30px;
+}
+
+.card .social-icons i {
+    cursor: pointer;
+    color: #ddd;
+    margin: 0 8px;
+    font-size: 22px;
+    opacity: 0;
+    transform: translateY(16px);
+    transition: .2s;
+}
+
+.card:hover .social-icons i {
+    opacity: 1;
+    transform: translateY(0); 
+}
+
+.card .social-icons i:hover {
+    color: #e48307;
+}
+
+.card .social-icons i:nth-child(1) {
+    transition-delay: .1s;
+}
+
+.card .social-icons i:nth-child(2) {
+    transition-delay: .2s;
+}
+
+.card .social-icons i:nth-child(3) {
+    transition-delay: .3s;
+}
+
+.card .social-icons i:nth-child(4) {
+    transition-delay: .4s;
+}
